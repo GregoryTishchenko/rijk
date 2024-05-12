@@ -4,6 +4,7 @@ import { useFetch } from './hooks/useFetch';
 import Header from './components/Header';
 import SearchForm from './components/SearchForm';
 import Button from './components/UI/button/Button';
+import ArtObjects from './components/ArtObjects';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -40,6 +41,7 @@ function App() {
       <SearchForm formSubmit={handleSearchQuery} />
 
       <section className="content artsObjects">
+        <ArtObjects items={items} />
         {error && <p>Error: {error}</p>}
 
         {!error && (

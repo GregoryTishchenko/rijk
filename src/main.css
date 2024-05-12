@@ -77,6 +77,55 @@ header .logo.scrolled img {
   background-size: contain;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m8.5,0h-4C2.019,0,0,2.019,0,4.5v4c0,.827.673,1.5,1.5,1.5h7c.827,0,1.5-.673,1.5-1.5V1.5c0-.827-.673-1.5-1.5-1.5Zm.5,8.5c0,.276-.224.5-.5.5H1.5c-.276,0-.5-.224-.5-.5v-4c0-1.93,1.57-3.5,3.5-3.5h4c.276,0,.5.224.5.5v7Zm4.5,1.5h7c.827,0,1.5-.673,1.5-1.5v-4c0-2.481-2.019-4.5-4.5-4.5h-4c-.827,0-1.5.673-1.5,1.5v7c0,.827.673,1.5,1.5,1.5Zm-.5-8.5c0-.276.224-.5.5-.5h4c1.93,0,3.5,1.57,3.5,3.5v4c0,.276-.224.5-.5.5h-7c-.276,0-.5-.224-.5-.5V1.5Zm-4.5,10.5H1.5c-.827,0-1.5.673-1.5,1.5v4c0,2.481,2.019,4.5,4.5,4.5h4c.827,0,1.5-.673,1.5-1.5v-7c0-.827-.673-1.5-1.5-1.5Zm.5,8.5c0,.276-.224.5-.5.5h-4c-1.93,0-3.5-1.57-3.5-3.5v-4c0-.276.224-.5.5-.5h7c.276,0,.5.224.5.5v7Zm14.854,2.646l-3-3c.705-.862,1.146-1.948,1.146-3.146,0-2.757-2.243-5-5-5s-5,2.243-5,5,2.243,5,5,5c1.198,0,2.284-.441,3.146-1.146l3,3c.098.098.226.146.354.146s.256-.049.354-.146c.195-.195.195-.512,0-.707Zm-6.854-2.146c-2.206,0-4-1.794-4-4s1.794-4,4-4,4,1.794,4,4-1.794,4-4,4Z' fill='%23FFF'/></svg>");
 }
+.grid {
+  display: flex;
+  width: auto;
+  gap: 1rem;
+}
+.grid__item {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.grid__item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: -4px;
+  min-height: 120px;
+  object-fit: cover;
+}
+.grid__item a {
+  display: flex;
+  align-items: flex-end;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5rem;
+  background-color: rgba(33, 88, 115, 0.6);
+  opacity: 0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.grid__item a span {
+  font-size: 1rem;
+  font-weight: 200;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.grid__item:hover a,
+.grid__item:focus a {
+  padding: 0 0.5rem 1rem;
+  opacity: 1;
+}
+.grid__item:hover h3,
+.grid__item:focus h3 {
+  bottom: 1rem;
+}
 .artsObjects button {
   margin: 3rem auto;
 }
