@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ApiService from './Api/ApiService';
 import { useFetch } from './hooks/useFetch';
+import Header from './components/Header';
+import SearchForm from './components/SearchForm';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -16,8 +18,12 @@ function App() {
     fetchItems(query, page);
   }, [query, page]);
 
-  console.log(items);
-  return <div className="App">Init</div>;
+  return (
+    <>
+      <Header />
+      <SearchForm />
+    </>
+  );
 }
 
 export default App;
