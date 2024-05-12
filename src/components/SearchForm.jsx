@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Input from './UI/input/Input';
+import Button from './UI/button/Button';
 
 const SearchForm = ({ formSubmit }) => {
   const [value, setValue] = useState('');
@@ -18,13 +20,13 @@ const SearchForm = ({ formSubmit }) => {
         Dive into a world of <span>visual storytelling</span>
       </h1>
       <form data-testid="search-form" onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           data-testid="search-input"
           value={value}
           onChange={handleInputChange}
         />
-        <button type="submit">Search</button>
+        <Button type="submit">Search</Button>
       </form>
     </section>
   );
