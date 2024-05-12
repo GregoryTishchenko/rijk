@@ -24,6 +24,11 @@
     background-color: transparent;
     opacity: 1;
   }
+  .grid__item:hover a,
+  .grid__item:focus a {
+    padding: 0;
+    opacity: 1;
+  }
   .grid__item a span {
     background: linear-gradient(
       180deg,
@@ -49,5 +54,6 @@
     right: 0;
     height: calc(100% - 2px);
     font-size: 0;
+    gap: 0;
   }
 }

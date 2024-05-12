@@ -10,10 +10,12 @@ function App() {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
+  const [totalItems, setTotalItems] = useState(0);
 
   const [fetchItems, isLoading, error] = useFetch(async (query, page) => {
     const response = await ApiService.getCollection(query, page);
     setItems([...items, ...response.data.artObjects]);
+    setTotalItems(response.data.countFacets.hasimage);
   });
 
   useEffect(() => {
@@ -44,7 +46,7 @@ function App() {
         <ArtObjects items={items} />
         {error && <p>Error: {error}</p>}
 
-        {!error && (
+        {!error && totalItems > items.length && (
           <Button onClick={handleLoadMore} data-testid="load-more-button">
             {isLoading ? 'Loading...' : 'Load more'}
           </Button>
