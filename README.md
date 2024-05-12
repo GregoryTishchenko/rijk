@@ -46,13 +46,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Technologies Used
 
-React
-Axios
-Cypress
-
-## Credits
-
-Mention any credits or acknowledgments here.
+React\
+Axios\
+Cypress\
 
 ## License
 
