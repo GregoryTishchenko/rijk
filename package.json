@@ -40,5 +40,8 @@
     "moduleNameMapper": {
       "^axios$": "axios/dist/node/axios.cjs"
     }
+  },
+  "devDependencies": {
+    "cypress": "^13.9.0"
   }
 }
