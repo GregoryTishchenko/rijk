@@ -47,7 +47,7 @@ function App() {
         {error && <p>Error: {error}</p>}
 
         {!error && totalItems > items.length && (
-          <Button onClick={handleLoadMore} data-testid="load-more-button">
+          <Button onClick={handleLoadMore} classList="btn--loadMore" data-testid="load-more-button" title="Load more" aria-label="Load more">
             {isLoading ? 'Loading...' : 'Load more'}
           </Button>
         )}

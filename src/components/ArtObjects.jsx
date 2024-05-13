@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import ArtObject from './ArtObject';
+import Lightbox from './Lightbox';
 
 const ArtObjects = ({ items }) => {
   const [columns, setColumns] = useState([]);
@@ -48,16 +49,33 @@ const ArtObjects = ({ items }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [handleResize, breakpoints]);
 
+  const [lightboxVisible, setLightboxVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({});
+
+  const openLightbox = (currentImage) => {
+    setSelectedImage(currentImage);
+    setLightboxVisible(true);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage({});
+    setLightboxVisible(false);
+  };
+
   return (
-    <div className="grid">
-      {columns.map((column, index) => (
-        <div key={index} className="grid__column">
-          {column.map((item) => (
-            <ArtObject key={item.id} item={item} />
-          ))}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid">
+        {columns.map((column, index) => (
+          <div key={index} className="grid__column">
+            {column.map((item) => (
+              <ArtObject key={item.id} item={item} openLightbox={openLightbox} />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {lightboxVisible && <Lightbox item={selectedImage} onClose={closeLightbox} />}
+    </>
   );
 };
 

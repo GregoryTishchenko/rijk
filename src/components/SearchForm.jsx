@@ -26,7 +26,7 @@ const SearchForm = ({ formSubmit }) => {
           value={value}
           onChange={handleInputChange}
         />
-        <Button type="submit">Search</Button>
+        <Button type="submit" title="Search" aria-label="Search">Search</Button>
       </form>
     </section>
   );
