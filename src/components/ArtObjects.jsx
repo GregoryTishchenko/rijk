@@ -62,19 +62,30 @@ const ArtObjects = ({ items }) => {
     setLightboxVisible(false);
   };
 
+  let colsCount = columns.length;
+
   return (
     <>
       <div className="grid">
         {columns.map((column, index) => (
-          <div key={index} className="grid__column">
+          <div
+            key={index}
+            className={`grid__column grid__column--${colsCount}`}
+          >
             {column.map((item) => (
-              <ArtObject key={item.id} item={item} openLightbox={openLightbox} />
+              <ArtObject
+                key={item.id}
+                item={item}
+                openLightbox={openLightbox}
+              />
             ))}
           </div>
         ))}
       </div>
 
-      {lightboxVisible && <Lightbox item={selectedImage} onClose={closeLightbox} />}
+      {lightboxVisible && (
+        <Lightbox item={selectedImage} onClose={closeLightbox} />
+      )}
     </>
   );
 };

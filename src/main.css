@@ -82,6 +82,18 @@ header .logo.scrolled img {
   width: auto;
   gap: 1rem;
 }
+.grid__column {
+  max-width: 20%;
+}
+.grid__column--4 {
+  max-width: 25%;
+}
+.grid__column--3 {
+  max-width: 33%;
+}
+.grid__column--2 {
+  max-width: 50%;
+}
 .grid__item {
   position: relative;
   margin-bottom: 1rem;
@@ -89,7 +101,6 @@ header .logo.scrolled img {
 }
 .grid__item img {
   width: 100%;
-  height: auto;
   min-height: 120px;
   margin-bottom: -4px;
   object-fit: cover;

@@ -6,10 +6,21 @@ const ArtObject = ({ item, openLightbox }) => {
 
   // The Rijksmuseum API doesn't provide specific endpoints for different image sizes.
   // solution is to change "=s0" parameter from url by "=s400" to load image with max size 400px
-  const mediumImageUrl = item.webImage.url.replace('=s0', '=s400');
-  
+  const mediumImageUrl = item.webImage.url.replace('=s0', '=s300');
+
   return (
-    <div className="grid__item" key={keyId} role="button" tabIndex="0" onClick={() => openLightbox(item)}>
+    <div
+      className="grid__item"
+      key={keyId}
+      role="button"
+      tabIndex="0"
+      onClick={() => openLightbox(item)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          openLightbox(item);
+        }
+      }}
+    >
       <img loading="lazy" src={mediumImageUrl} alt={item.title} />
       <h3>{item.title}</h3>
     </div>
