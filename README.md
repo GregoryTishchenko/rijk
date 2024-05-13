@@ -14,11 +14,9 @@
 
 ## Create Rijksmuseum API access
 
-Go to https://www.rijksmuseum.nl/en/rijksstudio and create account.\
-On your profile settings page, go to advanced settings.\
-Create you API key.\
-Create .env file in the project folder.\
-Set REACT_APP_RIJKSMUSEUM_API_KEY=YOUR_KEY_VALUE
+Go to https://www.rijksmuseum.nl/en/rijksstudio and create new account or login.\
+On your profile settings page, go to advanced settings and create your API key.\
+Create .env file in the project folder with REACT_APP_RIJKSMUSEUM_API_KEY=YOUR_KEY_VALUE
 
 ## Runs the app in the development mode
 
@@ -28,11 +26,11 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Lint errors will also be displayed in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.
 
 ### `npx cypress open`
 
@@ -44,12 +42,8 @@ After a moment, the Cypress Launchpad will open.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Technologies Used
+## Technologies used
 
-React\
-Axios\
-Cypress\
-
-## License
-
-This project is licensed under the MIT License.
+React - 18\
+Axios - 1.6.8\
+Cypress - 13.9
